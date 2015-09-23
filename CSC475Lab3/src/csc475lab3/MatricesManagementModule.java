@@ -10,5 +10,14 @@ package csc475lab3;
  * @author Igor Kimieciki
  */
 public class MatricesManagementModule {
+
+    public MatricesManagementModule() {
+    }
+    
+    public static int multiplyMatrices(int[][] mat1, int[][] mat2){
+        
+        
+        return 0;
+    }
     
 }
