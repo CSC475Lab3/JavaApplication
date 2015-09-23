@@ -15,12 +15,16 @@ public class CSC475Lab3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         
-        int[][] array1 = {{1,2,3,4,5},{6,7,8,9,10},{11,12,13,14,15},{16,17,18,19,20},{21,22,23,24,25}};
+        int[][] array1 = {{1,2,3},{4,5,6}};
+        int[][] array2 = {{7,8},{9,10},{11, 12}};
         Matrix matrix1 = new Matrix(array1);
+        Matrix matrix2 = new Matrix(array2);
         
         System.out.println(matrix1);
+        System.out.println(matrix2);
+        
+        matrix1.multiply(matrix2);
     }
     
 }
