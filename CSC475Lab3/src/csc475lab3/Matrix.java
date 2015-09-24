@@ -10,21 +10,21 @@ package csc475lab3;
  * @author Igor Kimieciki
  */
 public class Matrix {
-    private int[][] matrix;
+    private float[][] matrix;
 
     public Matrix() {
-        this.matrix = new int[0][0];
+        this.matrix = new float[0][0];
     }
     
-    public Matrix(int[][] matrix) {
+    public Matrix(float[][] matrix) {
         this.matrix = matrix;
     }
 
-    public int[][] getMatrix() {
+    public float[][] getMatrix() {
         return this.matrix;
     }
 
-    public void setMatrix(int[][] matrix) {
+    public void setMatrix(float[][] matrix) {
         this.matrix = matrix;
     }
     
@@ -36,16 +36,16 @@ public class Matrix {
         return matrix.length;
     }
     
-    public int getValueAt(int row, int column){
+    public float getValueAt(int row, int column){
         return matrix[row][column];
     }
     
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
-        for(int matrixRow[] : this.matrix) {
-            for(int i : matrixRow) {
-                builder.append(String.format("%4d ", i));
+        for(float matrixRow[] : this.matrix) {
+            for(float i : matrixRow) {
+                builder.append(String.format("%.0f ", i));
             }
              builder.append("\n");
         }
@@ -69,7 +69,7 @@ public class Matrix {
         p = matrix2.getNumberOfColumns();
         m = getNumberOfColumns();
         
-        int[][] resultArray = new int[n][p];
+        float[][] resultArray = new float[n][p];
         
         //resultArray[0][1] = 0;
         //System.out.println(String.format("M1[%d][%d] x M2[%d][%d]", n, m, m, p));

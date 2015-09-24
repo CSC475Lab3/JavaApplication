@@ -16,8 +16,8 @@ public class CSC475Lab3 {
      */
     public static void main(String[] args) {
         
-        int[][] array1 = {{1,2,3},{4,5,6}};
-        int[][] array2 = {{7,8},{9,10},{11, 12}};
+        float[][] array1 = {{1,2,3},{4,5,6}};
+        float[][] array2 = {{7,8},{9,10},{11, 12}};
         Matrix matrix1 = new Matrix(array1);
         Matrix matrix2 = new Matrix(array2);
         
