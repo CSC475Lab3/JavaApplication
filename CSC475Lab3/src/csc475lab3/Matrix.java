@@ -45,7 +45,8 @@ public class Matrix {
         StringBuilder builder = new StringBuilder();
         for(float matrixRow[] : this.matrix) {
             for(float i : matrixRow) {
-                builder.append(String.format("%.0f ", i));
+                //builder.append(String.format("%.0f ", i));
+                builder.append(String.format("%6d ", (long)i));
             }
              builder.append("\n");
         }

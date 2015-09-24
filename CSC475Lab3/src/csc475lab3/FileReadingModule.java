@@ -20,17 +20,15 @@ public class FileReadingModule {
     
     
     public static void readFileToMatrices(String fileName, Matrix matrix1, Matrix matrix2){
-        System.out.println("------------------------------");
+        //System.out.println("------------------------------");
         try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            StringBuilder sb = new StringBuilder();
+            String line;
+            br.readLine();
+            //System.out.println(line);
             
             
-            String line = br.readLine();
-            System.out.println(line);
-            
-            
-            line = br.readLine();
-            System.out.println(line);// Blank line
+            line = br.readLine();// Blank line
+            //System.out.println(line);
             
             String[] headerData;
             headerData = line.split(" ");
@@ -39,8 +37,9 @@ public class FileReadingModule {
             m = Integer.parseInt(headerData[1]);
             p = Integer.parseInt(headerData[2]);
             
-            line = br.readLine();
-            System.out.println(line);// Blank line
+            br.readLine();// Blank line
+            //System.out.println(line);
+            
             //m1 n rows and m columns
             //m2 m rows and p columns
             //System.out.println(String.format("-- %d, %d, %d", n, m, p));
@@ -49,61 +48,32 @@ public class FileReadingModule {
             
             for (int i = 0; i < n; i++){
                 line = br.readLine();
-                //array1[i] = 
+                
                 array1String = line.split(", ");
                 for(int j = 0; j < m; j++) array1[i][j] = Float.parseFloat(array1String[j]);
-                System.out.println(line);                
+                //System.out.println(line);                
             }
             
-            matrix1.setMatrix(array1);
-            System.out.println(matrix1);
-            line = br.readLine();
-            System.out.println(line);// Blank line
+            br.readLine();// Blank line
+            //System.out.println(line);
+            
+            float[][] array2 = new float[m][p];
+            String[] array2String;         
             
             for (int i = 0; i < m; i++){
                 line = br.readLine();
-                System.out.println(line);                
+                
+                array2String = line.split(", ");
+                for(int j = 0; j < p; j++) array2[i][j] = Float.parseFloat(array2String[j]);
+                //System.out.println(line);                
             }
             
+            matrix1.setMatrix(array1);
+            matrix2.setMatrix(array2);
+            System.out.println(matrix1);
+            System.out.println(matrix2);
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            /*
-            while (line != null) {
-                sb.append(line);
-                sb.append(System.lineSeparator());
-                line = br.readLine();
-            }
-            String everything = sb.toString();
-            System.out.println(everything);
-            */
-            
-            
-            
-            
-            
-            
-            
-            //String[] parts = string.split("-");
-            //String part1 = parts[0]; // 004
-            //String part2 = parts[1]; // 034556
-            
-            
-            
+                            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FileReadingModule.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
