@@ -25,6 +25,8 @@ public class CSC475Lab3 {
         System.out.println(matrix2);
         
         matrix1.multiply(matrix2);
+        
+        FileReadingModule.readFileToMatrices("matrices_values.txt", matrix1, matrix2);
     }
     
 }
