@@ -61,6 +61,7 @@ public class Matrix {
         
         if(getNumberOfColumns() != matrix2.getNumberOfRows()){
             System.out.println("ERROR M1 Columns # != M2 Rows #.");
+            return null;
         }else{
             System.out.println("M1 and M2 can be multiplied.");
         }
